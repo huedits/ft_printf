@@ -6,11 +6,11 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:21:00 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 17:22:54 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:39:33 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libs/ft_printf.h"
 
 int	ft_putstr(char *str)
 {

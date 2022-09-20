@@ -6,11 +6,11 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 02:04:21 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 17:28:20 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:48:29 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libs/ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -47,10 +47,10 @@ int	check_flag(char flag, va_list arg)
 		return (ft_itoa(va_arg(arg, int)));
 	if (flag == 'u')
 		return (ft_utoa(va_arg(arg, unsigned int)));
-	if (flag == 'x' || 'X')
+	if (flag == 'x' || flag == 'X')
 		return (ft_printhex(va_arg(arg, unsigned int), flag));
 	if (flag == 'p')
-		return (p_flag(va_arg(arg, unsigned long int)));
+		return (ft_pflag(va_arg(arg, unsigned long int)));
 	else
 		return (ft_putchar(flag));
 }
@@ -66,4 +66,23 @@ int	ft_nsize(unsigned int n)
 		count++;
 	}
 	return (count);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*mem;
+	size_t	i;
+
+	if (size > (~(1 << 31) / count))
+		return (NULL);
+	mem = malloc (size * count);
+	if (!mem)
+		return (NULL);
+	i = 0;
+	while (i < (count * size))
+	{
+		((char *) mem)[i] = 0;
+		i++;
+	}
+	return (mem);
 }

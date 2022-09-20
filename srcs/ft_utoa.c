@@ -6,11 +6,11 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:24:33 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 17:40:45 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:39:31 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libs/ft_printf.h"
 
 int	ft_utoa(unsigned int nbr)
 {
@@ -28,5 +28,7 @@ int	ft_utoa(unsigned int nbr)
 		nbr /= 10;
 		size--;
 	}
-	return (ft_putstr(str));
+	ft_putstr(str);
+	free(str);
+	return (size);
 }

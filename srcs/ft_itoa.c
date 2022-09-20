@@ -6,11 +6,11 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:38:34 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 20:04:20 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:43:04 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libs/ft_printf.h"
 
 static void	fill_tab(char *tab, int nb, int size)
 {
@@ -67,8 +67,10 @@ int	ft_itoa(int nbr)
 	char	*str;
 	size_t	size;
 
-	size = get_size(n);
+	size = get_size(nbr);
 	str = (char *) ft_calloc(size + 1, sizeof(char));
-	fill_tab(str, n, size);
-	return (ft_putstr(str));
+	fill_tab(str, nbr, size);
+	ft_putstr(str);
+	free(str);
+	return (size);
 }
