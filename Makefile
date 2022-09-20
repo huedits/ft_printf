@@ -27,7 +27,7 @@ fclean: clean
 re: fclean all
 
 git:
-	git add .
+	git add libs/ srcs/*.c Makefile libftprintf.a
 	sleep 5
 	git commit -m "Automated commit from Makefile"
 	git push
