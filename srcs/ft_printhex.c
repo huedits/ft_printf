@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 02:03:26 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 19:50:05 by vimatheu         ###   ########.fr       */
+/*   Created: 2022/09/20 19:16:17 by vimatheu          #+#    #+#             */
+/*   Updated: 2022/09/20 19:31:38 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
+#define BASE "0123456789abcdef"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+int	ft_printhex(unsigned int nbr, int case)
+{
+	int	count;
 
-int	check_flag(char flag, va_list arg);
-int	ft_itoa(int nbr);
-int	ft_nsize(unsigned int n);
-int	ft_printhex(unsigned int nbr, int case);
-int	ft_putchar(int c);
-int	ft_putstr(char *str);
-int	ft_utoa(unsigned int nbr);
-
-#endif
+	count = 0;
+	if (nbr > 16)
+	{
+		count += ft_printhex((nbr / 16), case);
+		count += ft_printhex((nbr % 16), case);
+	}
+	else
+	{
+		if (nbr <= 10)
+			return (ft_putchar(BASE[nb] + '0'));
+		else
+			return (ft_putchar(BASE[nb] - ('x' - case)));
+	}
+	return (count);
+}

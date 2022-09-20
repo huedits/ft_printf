@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 02:03:26 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 19:50:05 by vimatheu         ###   ########.fr       */
+/*   Created: 2022/09/20 17:24:33 by vimatheu          #+#    #+#             */
+/*   Updated: 2022/09/20 17:40:45 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+int	ft_utoa(unsigned int nbr)
+{
+	int		size;
+	char	*str;
 
-int	check_flag(char flag, va_list arg);
-int	ft_itoa(int nbr);
-int	ft_nsize(unsigned int n);
-int	ft_printhex(unsigned int nbr, int case);
-int	ft_putchar(int c);
-int	ft_putstr(char *str);
-int	ft_utoa(unsigned int nbr);
-
-#endif
+	size = ft_nsize(nbr);
+	str = (char *) malloc (size + 1);
+	if (!str)
+		return (0);
+	str[size] = 0;
+	while (size > 0)
+	{
+		str[size - 1] = (nbr % 10) + '0';
+		nbr /= 10;
+		size--;
+	}
+	return (ft_putstr(str));
+}

@@ -6,9 +6,11 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 02:04:21 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/15 02:43:56 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/09/20 17:28:20 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -35,20 +37,33 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int	check_flag(char c, va_list arg)
+int	check_flag(char flag, va_list arg)
 {
-	if (c == 'c')
-		return (ft_putchar(va_arg(arg, char)));
-	if (c == 's')
+	if (flag == 'c')
+		return (ft_putchar(va_arg(arg, int)));
+	if (flag == 's')
 		return (ft_putstr(va_arg(arg, char *)));
-	if (c == 'd' || c == 'i')
+	if (flag == 'd' || flag == 'i')
 		return (ft_itoa(va_arg(arg, int)));
-	if (c == 'u')
+	if (flag == 'u')
 		return (ft_utoa(va_arg(arg, unsigned int)));
-	if (c == 'x' || 'X')
-		return (ft_printhex(va_arg(arg, unsigned int), c));
-	if (c == 'p')
+	if (flag == 'x' || 'X')
+		return (ft_printhex(va_arg(arg, unsigned int), flag));
+	if (flag == 'p')
 		return (p_flag(va_arg(arg, unsigned long int)));
 	else
-		return (ft_putchar(c));
+		return (ft_putchar(flag));
+}
+
+int	ft_nsize(unsigned int n)
+{
+	int	count;
+
+	count = 1;
+	while (n > 9)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
 }

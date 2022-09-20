@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 02:03:26 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 19:50:05 by vimatheu         ###   ########.fr       */
+/*   Created: 2022/09/20 17:19:48 by vimatheu          #+#    #+#             */
+/*   Updated: 2022/09/20 17:23:24 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-
-int	check_flag(char flag, va_list arg);
-int	ft_itoa(int nbr);
-int	ft_nsize(unsigned int n);
-int	ft_printhex(unsigned int nbr, int case);
-int	ft_putchar(int c);
-int	ft_putstr(char *str);
-int	ft_utoa(unsigned int nbr);
-
-#endif
+int	ft_putchar(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}
