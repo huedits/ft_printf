@@ -6,7 +6,7 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:16:17 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 23:14:57 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/09/20 23:21:03 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printhex(unsigned int nbr, int flag)
 	int	count;
 
 	count = 0;
-	if (nbr > 16)
+	if (nbr >= 16)
 	{
 		count += ft_printhex((nbr / 16), flag);
 		count += ft_printhex((nbr % 16), flag);
@@ -26,9 +26,9 @@ int	ft_printhex(unsigned int nbr, int flag)
 	else
 	{
 		if (nbr < 10)
-			return (ft_putchar(BASE[nbr - 1]));
+			return (ft_putchar(BASE[nbr]));
 		else
-			return (ft_putchar(BASE[nbr - 1] - ('x' - flag)));
+			return (ft_putchar(BASE[nbr] - ('x' - flag)));
 	}
 	return (count);
 }
