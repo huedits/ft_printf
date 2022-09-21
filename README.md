@@ -7,7 +7,7 @@
 
 ### Content
 ```diff
-- This project is still in development.
++ Mandatory part is done. Still considering if I should try for the bonus.
 ```
 **Source files:**
 [ft_printf.c](srcs/ft_printf.c)
