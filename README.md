@@ -7,7 +7,7 @@
 
 ### Content
 ```diff
-+ Mandatory part is done. Still considering if I should try for the bonus.
++ Mandatory part is done.
 ```
 **Source files:**
 [ft_printf.c](srcs/ft_printf.c)
