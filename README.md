@@ -25,7 +25,11 @@
 [Makefile](Makefile)
 
 ## Test results
+Test by **[Paulo Santana](https://github.com/paulo-santana/ft_printf_tester)**<br />
+![Paulo Santana](paulo-santana.png)
 
+Test by **[Tripouille](https://github.com/Tripouille/printfTester)**<br/>
+![Tripouille](tripouille.png)
 
 
 ## 📝 License
