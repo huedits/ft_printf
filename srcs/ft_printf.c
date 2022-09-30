@@ -6,7 +6,7 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 02:04:21 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 22:44:19 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/09/30 10:29:26 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,36 +53,4 @@ int	check_flag(char flag, va_list arg)
 		return (ft_pflag(va_arg(arg, unsigned long int)));
 	else
 		return (ft_putchar(flag));
-}
-
-int	ft_nsize(unsigned int n)
-{
-	int	count;
-
-	count = 1;
-	while (n > 9)
-	{
-		n /= 10;
-		count++;
-	}
-	return (count);
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*mem;
-	size_t	i;
-
-	if (size > (~(1 << 31) / count))
-		return (NULL);
-	mem = malloc (size * count);
-	if (!mem)
-		return (NULL);
-	i = 0;
-	while (i < (count * size))
-	{
-		((char *) mem)[i] = 0;
-		i++;
-	}
-	return (mem);
 }
