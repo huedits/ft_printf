@@ -7,11 +7,29 @@
 
 ### Content
 ```diff
-- This project is still in development.
++ Mandatory part is done.
 ```
+**Source files:**
+[ft_printf.c](srcs/ft_printf.c)
+| [ft_putchar.c](srcs/ft_putchar.c)
+| [ft_putstr.c](srcs/ft_putstr.c)
+| [ft_itoa.c](srcs/ft_itoa.c)
+| [ft_utoa.c](srcs/ft_utoa.c)
+| [ft_printhex.c](srcs/ft_printhex.c)
+| [ft_pflag.c](srcs/ft_pflag.c)
+
+**Header File:**
+[ft_printf.h](libs/ft_printf.h)
+
+**Makefile:**
+[Makefile](Makefile)
 
 ## Test results
+Test by **[Paulo Santana](https://github.com/paulo-santana/ft_printf_tester)**<br />
+![Paulo Santana](paulo-santana.png)
 
+Test by **[Tripouille](https://github.com/Tripouille/printfTester)**<br/>
+![Tripouille](tripouille.png)
 
 
 ## 📝 License
