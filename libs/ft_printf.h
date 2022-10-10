@@ -6,7 +6,7 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 02:03:26 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/10/10 22:09:20 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:19:33 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-
 
 # ifdef __APPLE__
 #  define NULLTEXT "0x0"
