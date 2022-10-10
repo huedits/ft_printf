@@ -6,7 +6,7 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 02:04:21 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/30 10:29:26 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:26:30 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_printf(const char *str, ...)
 	int		count;
 	va_list	args;
 
+	if (!str)
+		return (-1);
 	count = 0;
 	va_start(args, str);
 	while (*str)

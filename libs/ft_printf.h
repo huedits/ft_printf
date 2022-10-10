@@ -6,7 +6,7 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 02:03:26 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 23:52:38 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:29:04 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+
+
+# ifdef __APPLE__
+#  define NULLTEXT "0x0"
+# elif __linux__
+#  define NULLTEXT "(nil)"
+# else
+#  define NULLTEXT "(null)"
+# endif
 
 int		check_flag(char flag, va_list arg);
 int		ft_itoa(int nbr);

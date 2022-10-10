@@ -6,7 +6,7 @@
 /*   By: vimatheu <vimatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:21:00 by vimatheu          #+#    #+#             */
-/*   Updated: 2022/09/20 22:47:08 by vimatheu         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:36:44 by vimatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ int	ft_putstr(char *str)
 	int	count;
 
 	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
+		return(ft_putstr(NULLTEXT));
 	count = 0;
 	while (str[count])
 	{
-		count += ft_putchar(str[count]);
+		write(1, &str[count], 1);
+		count++;
 	}
 	return (count);
 }

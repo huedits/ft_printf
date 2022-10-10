@@ -1,7 +1,8 @@
 NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
-LIBPATH = ./libs/
+
 SRCPATH = ./srcs/
+
 RM = rm -rf
 
 SRCS = $(addprefix $(SRCPATH), 	\
@@ -10,13 +11,13 @@ SRCS = $(addprefix $(SRCPATH), 	\
 
 OBJS = $(SRCS:.c=.o)
 
-.o: .c
-	cc $(CFLAGS) -I $(LIBPATH) -c $< -o $@
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
+
+.o: .c
+	cc $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
