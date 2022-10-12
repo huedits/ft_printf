@@ -6,8 +6,9 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
 
 ### Content
+This project has been completed and evaluated.
 ```diff
-+ Mandatory part is done.
++ Final grade 100/100.
 ```
 **Source files:**
 [ft_printf.c](srcs/ft_printf.c)
